@@ -16,12 +16,17 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="crew.html">Our Crew</a></li>
-        <li><a href="fleet.html">Our Fleet</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="flights.html" class="nav-book-btn active">Book Now</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="crew.html" data-i18n="nav.crew">Our Crew</a></li>
+        <li><a href="fleet.html" data-i18n="nav.fleet">Our Fleet</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="flights.html" class="nav-book-btn active" data-i18n="nav.book">Book Now</a></li>
       </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
     </nav>
   </header>
 
@@ -29,32 +34,32 @@
   <div class="progress-steps">
     <div class="step active">
       <div class="step-dot">1</div>
-      <div class="step-label">Search</div>
+      <div class="step-label" data-i18n="step.search">Search</div>
     </div>
     <div class="step-line"></div>
     <div class="step">
       <div class="step-dot">2</div>
-      <div class="step-label">Flights</div>
+      <div class="step-label" data-i18n="step.flights">Flights</div>
     </div>
     <div class="step-line"></div>
     <div class="step">
       <div class="step-dot">3</div>
-      <div class="step-label">Seats</div>
+      <div class="step-label" data-i18n="step.seats">Seats</div>
     </div>
     <div class="step-line"></div>
     <div class="step">
       <div class="step-dot">4</div>
-      <div class="step-label">Summary</div>
+      <div class="step-label" data-i18n="step.summary">Summary</div>
     </div>
     <div class="step-line"></div>
     <div class="step">
       <div class="step-dot">5</div>
-      <div class="step-label">Payment</div>
+      <div class="step-label" data-i18n="step.payment">Payment</div>
     </div>
     <div class="step-line"></div>
     <div class="step">
       <div class="step-dot">6</div>
-      <div class="step-label">Done</div>
+      <div class="step-label" data-i18n="step.done">Done</div>
     </div>
   </div>
 
@@ -62,8 +67,8 @@
     <div class="flights-wrap">
       <div class="flights-form-card">
         <div class="flights-form-header">
-          <h2>Search Flights</h2>
-          <p>Find the best fares for your journey</p>
+          <h2 data-i18n="flights.title">Search Flights</h2>
+          <p data-i18n="flights.subtitle">Find the best fares for your journey</p>
         </div>
 
         <div class="flights-form-body">
@@ -71,14 +76,14 @@
 
             <!-- Trip type toggle -->
             <div class="trip-toggle">
-              <button type="button" class="trip-btn active" data-trip="one-way">One-way</button>
-              <button type="button" class="trip-btn" data-trip="round-trip">Round-trip</button>
+              <button type="button" class="trip-btn active" data-trip="one-way" data-i18n="flights.oneWay">One-way</button>
+              <button type="button" class="trip-btn" data-trip="round-trip" data-i18n="flights.roundTrip">Round-trip</button>
             </div>
 
             <!-- Route -->
             <div class="route-row">
               <div class="form-group">
-                <label for="from">From</label>
+                <label for="from" data-i18n="flights.from">From</label>
                 <select id="from">
                   <option value="TLV" selected>Tel Aviv (TLV)</option>
                   <option value="BCN">Barcelona (BCN)</option>
@@ -89,7 +94,7 @@
               </div>
               <button type="button" id="swap-btn" class="swap-btn" title="Swap origin and destination">⇄</button>
               <div class="form-group">
-                <label for="to">To</label>
+                <label for="to" data-i18n="flights.to">To</label>
                 <select id="to">
                   <option value="">Select destination</option>
                   <option value="BCN">Barcelona (BCN)</option>
@@ -104,23 +109,23 @@
             <!-- Dates -->
             <div class="form-row" id="dates-row">
               <div class="form-group">
-                <label for="departure">Departure Date</label>
+                <label for="departure" data-i18n="flights.dep">Departure Date</label>
                 <input type="date" id="departure" required>
               </div>
               <div class="form-group" id="return-date-group">
-                <label for="return-date">Return Date</label>
+                <label for="return-date" data-i18n="flights.ret">Return Date</label>
                 <input type="date" id="return-date">
               </div>
             </div>
 
             <!-- Passengers -->
             <div class="passengers-section">
-              <h3>Passengers</h3>
+              <h3 data-i18n="flights.passengers">Passengers</h3>
 
               <div class="pax-row">
                 <div class="pax-label">
-                  Adults
-                  <small>18 years and above</small>
+                  <span data-i18n="flights.adults">Adults</span>
+                  <small data-i18n="flights.adultsAge">18 years and above</small>
                 </div>
                 <div class="pax-counter">
                   <button type="button" class="pax-btn" data-target="adults" data-dir="down">−</button>
@@ -132,8 +137,8 @@
 
               <div class="pax-row">
                 <div class="pax-label">
-                  Teens
-                  <small>12–17 years</small>
+                  <span data-i18n="flights.teens">Teens</span>
+                  <small data-i18n="flights.teensAge">12–17 years</small>
                 </div>
                 <div class="pax-counter">
                   <button type="button" class="pax-btn" data-target="teens" data-dir="down">−</button>
@@ -145,8 +150,8 @@
 
               <div class="pax-row">
                 <div class="pax-label">
-                  Children
-                  <small>2–11 years</small>
+                  <span data-i18n="flights.children">Children</span>
+                  <small data-i18n="flights.childrenAge">2–11 years</small>
                 </div>
                 <div class="pax-counter">
                   <button type="button" class="pax-btn" data-target="children" data-dir="down">−</button>
@@ -159,7 +164,7 @@
 
             <div style="margin-top:28px;">
               <button type="submit" class="btn btn-primary" style="width:100%; padding:14px; font-size:1rem;">
-                Search Flights ✈
+                <span data-i18n="flights.search">Search Flights ✈</span>
               </button>
             </div>
 
@@ -172,7 +177,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <p><strong>VolAir Airlines</strong> &nbsp;|&nbsp; <a href="about.html">About</a> &nbsp;|&nbsp; <a href="crew.html">Crew</a> &nbsp;|&nbsp; <a href="fleet.html">Fleet</a></p>
-    <p style="margin-top:8px;">© 2026 VolAir Airlines. All rights reserved.</p>
+    <p style="margin-top:8px;" data-i18n="footer.rights">© 2026 VolAir Airlines. All rights reserved.</p>
   </footer>
 
   <script src="js/app.js"></script>

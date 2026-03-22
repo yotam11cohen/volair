@@ -3,7 +3,10 @@
     "allow": [
       "Bash(gh auth:*)",
       "Bash(git --version)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(start \"C:/Users/me/Downloads/Yotam/development/VolAir/index.html\")",
+      "Bash(start \"C:/Users/me/Downloads/Yotam/development/VolAir/seats.html\")",
+      "Bash(start \"C:/Users/me/Downloads/Yotam/development/VolAir/payment.html\")"
     ]
   }
 }

@@ -4,6 +4,186 @@
 
 'use strict';
 
+/* ==============================================
+   TRANSLATIONS (i18n)
+   ============================================== */
+const TRANSLATIONS = {
+  en: {
+    'nav.home':'Home','nav.crew':'Our Crew','nav.fleet':'Our Fleet','nav.about':'About','nav.book':'Book Now',
+    'step.search':'Search','step.flights':'Flights','step.seats':'Seats','step.summary':'Summary','step.payment':'Payment','step.done':'Done',
+    'index.tagline':'Sky is not the limit. It\'s your runway.',
+    'index.slogan':'Discover Europe\'s most beautiful destinations with VolAir Airlines',
+    'index.bookFlight':'Book a Flight','index.explore':'Explore Destinations',
+    'index.popular':'Popular Destinations','index.subtitle':'Direct flights from Tel Aviv to Europe\'s finest cities',
+    'index.direct':'Direct Flights','index.directDesc':'Non-stop routes from Tel Aviv to Europe\'s top destinations — no layovers, no stress.',
+    'index.seat':'Choose Your Seat','index.seatDesc':'Pick your perfect seat from our interactive seat map before you fly.',
+    'index.safe':'Safe & Reliable','index.safeDesc':'Modern Airbus fleet with an impeccable safety record and on-time performance.',
+    'flights.title':'Search Flights','flights.subtitle':'Find the best fares for your journey',
+    'flights.oneWay':'One-way','flights.roundTrip':'Round-trip',
+    'flights.from':'From','flights.to':'To',
+    'flights.dep':'Departure Date','flights.ret':'Return Date',
+    'flights.passengers':'Passengers',
+    'flights.adults':'Adults','flights.adultsAge':'18 years and above',
+    'flights.teens':'Teens','flights.teensAge':'12–17 years',
+    'flights.children':'Children','flights.childrenAge':'2–11 years',
+    'flights.search':'Search Flights ✈',
+    'seats.title':'Select Your Seats',
+    'seats.available':'Available','seats.taken':'Taken','seats.yourSel':'Your Selection',
+    'seats.yourSelTitle':'Your Selection','seats.seatsSelected':'seats selected',
+    'seats.noSeats':'No seats selected',
+    'summary.title':'Booking Summary','summary.subtitle':'Review your details before proceeding to payment',
+    'summary.routeTitle':'Route & Dates','summary.passTitle':'Passengers',
+    'summary.flightTitle':'Flight Details','summary.extrasTitle':'Extra Services',
+    'summary.seatsTitle':'Seats','summary.total':'Total Amount',
+    'summary.contact':'Contact Information',
+    'summary.email':'Email Address','summary.phone':'Phone Number',
+    'payment.title':'Payment','payment.subtitle':'Choose your preferred payment method',
+    'payment.totalPay':'Total to pay',
+    'payment.credit':'Credit Card','payment.paypal':'PayPal','payment.digital':'Apple / Google Pay',
+    'payment.fastSecure':'Fast & secure','payment.oneTap':'One-tap payment',
+    'payment.cardHolder':'Card Holder','payment.expires':'Expires',
+    'payment.cardHolderName':'Cardholder Name','payment.cardNumber':'Card Number',
+    'payment.expiry':'Expiry Date','payment.cvv':'CVV',
+    'payment.payNow':'🔒 Pay Now',
+    'payment.ssl':'🔐 Your payment is protected by 256-bit SSL encryption',
+    'confirm.title':'Booking Confirmed!',
+    'confirm.subtitle':'Your flight has been booked successfully. Have a wonderful journey!',
+    'confirm.print':'🖨 Print Boarding Pass','confirm.save':'💾 Save as PDF',
+    'confirm.backHome':'← Back to Home',
+    'confirm.flightSec':'Flight','confirm.paxSec':'Passengers & Seats',
+    'confirm.contactSec':'Contact','confirm.totalPaid':'Total Paid',
+    'btn.back':'← Back','btn.next':'Next →',
+    'btn.nextSeats':'Next: Select Seats →','btn.nextPayment':'Next: Payment →',
+    'footer.rights':'© 2026 VolAir Airlines. All rights reserved.',
+    'results.select':'Select Flight','results.total':'Total:','results.perPerson':'per person',
+    'extra.luggage':'🧳 Checked Luggage','extra.priority':'⚡ Priority Boarding','extra.drinks':'🍸 Special Drinks',
+  },
+  he: {
+    'nav.home':'בית','nav.crew':'הצוות שלנו','nav.fleet':'הצי שלנו','nav.about':'אודות','nav.book':'הזמן עכשיו',
+    'step.search':'חיפוש','step.flights':'טיסות','step.seats':'מושבים','step.summary':'סיכום','step.payment':'תשלום','step.done':'סיום',
+    'index.tagline':'השמיים הם לא הגבול. הם המסלול שלך.',
+    'index.slogan':'גלה את היעדים היפים באירופה עם VolAir Airlines',
+    'index.bookFlight':'הזמן טיסה','index.explore':'גלה יעדים',
+    'index.popular':'יעדים פופולריים','index.subtitle':'טיסות ישירות מתל אביב לערים היפות באירופה',
+    'index.direct':'טיסות ישירות','index.directDesc':'מסלולים ישירים מתל אביב ליעדים הטובים באירופה — ללא עצירות, ללא לחץ.',
+    'index.seat':'בחר מושב','index.seatDesc':'בחר את המושב המושלם שלך ממפת המושבים האינטראקטיבית לפני הטיסה.',
+    'index.safe':'בטוח ואמין','index.safeDesc':'צי איירבוס מודרני עם שיא בטיחות מושלם וביצועים בזמן.',
+    'flights.title':'חיפוש טיסות','flights.subtitle':'מצא את המחירים הטובים ביותר לנסיעתך',
+    'flights.oneWay':'כיוון אחד','flights.roundTrip':'הלוך ושוב',
+    'flights.from':'מ','flights.to':'אל',
+    'flights.dep':'תאריך יציאה','flights.ret':'תאריך חזרה',
+    'flights.passengers':'נוסעים',
+    'flights.adults':'מבוגרים','flights.adultsAge':'18 ומעלה',
+    'flights.teens':'בני נוער','flights.teensAge':'12–17 שנים',
+    'flights.children':'ילדים','flights.childrenAge':'2–11 שנים',
+    'flights.search':'חפש טיסות ✈',
+    'seats.title':'בחר את המושבים שלך',
+    'seats.available':'פנוי','seats.taken':'תפוס','seats.yourSel':'הבחירה שלך',
+    'seats.yourSelTitle':'הבחירה שלך','seats.seatsSelected':'מושבים נבחרו',
+    'seats.noSeats':'לא נבחרו מושבים',
+    'summary.title':'סיכום הזמנה','summary.subtitle':'בדוק את הפרטים לפני המעבר לתשלום',
+    'summary.routeTitle':'מסלול ותאריכים','summary.passTitle':'נוסעים',
+    'summary.flightTitle':'פרטי הטיסה','summary.extrasTitle':'שירותים נוספים',
+    'summary.seatsTitle':'מושבים','summary.total':'סכום כולל',
+    'summary.contact':'פרטי התקשרות',
+    'summary.email':'כתובת אימייל','summary.phone':'מספר טלפון',
+    'payment.title':'תשלום','payment.subtitle':'בחר את אמצעי התשלום המועדף עליך',
+    'payment.totalPay':'סה"כ לתשלום',
+    'payment.credit':'כרטיס אשראי','payment.paypal':'פייפאל','payment.digital':'Apple / Google Pay',
+    'payment.fastSecure':'מהיר ומאובטח','payment.oneTap':'תשלום בלחיצה אחת',
+    'payment.cardHolder':'שם בעל הכרטיס','payment.expires':'תוקף',
+    'payment.cardHolderName':'שם בעל הכרטיס','payment.cardNumber':'מספר כרטיס',
+    'payment.expiry':'תאריך תפוגה','payment.cvv':'CVV',
+    'payment.payNow':'🔒 שלם עכשיו',
+    'payment.ssl':'🔐 התשלום שלך מוגן בהצפנת SSL 256-ביט',
+    'confirm.title':'ההזמנה אושרה!',
+    'confirm.subtitle':'הטיסה שלך הוזמנה בהצלחה. נסיעה טובה!',
+    'confirm.print':'🖨 הדפס כרטיס עלייה','confirm.save':'💾 שמור כ-PDF',
+    'confirm.backHome':'← חזרה לדף הבית',
+    'confirm.flightSec':'טיסה','confirm.paxSec':'נוסעים ומושבים',
+    'confirm.contactSec':'פרטי קשר','confirm.totalPaid':'סה"כ שולם',
+    'btn.back':'← חזרה','btn.next':'הבא →',
+    'btn.nextSeats':'הבא: בחר מושבים →','btn.nextPayment':'הבא: תשלום →',
+    'footer.rights':'© 2026 VolAir Airlines. כל הזכויות שמורות.',
+    'results.select':'בחר טיסה','results.total':'סה"כ:','results.perPerson':'לנוסע',
+    'extra.luggage':'🧳 כבודה','extra.priority':'⚡ עלייה מועדפת','extra.drinks':'🍸 משקאות מיוחדים',
+  },
+  fr: {
+    'nav.home':'Accueil','nav.crew':'Notre Équipage','nav.fleet':'Notre Flotte','nav.about':'À Propos','nav.book':'Réserver',
+    'step.search':'Recherche','step.flights':'Vols','step.seats':'Sièges','step.summary':'Résumé','step.payment':'Paiement','step.done':'Terminé',
+    'index.tagline':'Le ciel n\'est pas la limite. C\'est votre piste.',
+    'index.slogan':'Découvrez les plus belles destinations d\'Europe avec VolAir Airlines',
+    'index.bookFlight':'Réserver un Vol','index.explore':'Explorer les Destinations',
+    'index.popular':'Destinations Populaires','index.subtitle':'Vols directs de Tel Aviv vers les plus belles villes d\'Europe',
+    'index.direct':'Vols Directs','index.directDesc':'Liaisons directes de Tel Aviv vers les meilleures destinations d\'Europe — sans escale.',
+    'index.seat':'Choisissez Votre Siège','index.seatDesc':'Choisissez votre siège idéal sur notre plan de cabine interactif avant de voler.',
+    'index.safe':'Sûr & Fiable','index.safeDesc':'Flotte Airbus moderne avec un bilan de sécurité impeccable et des performances ponctuelles.',
+    'flights.title':'Rechercher des Vols','flights.subtitle':'Trouvez les meilleurs tarifs pour votre voyage',
+    'flights.oneWay':'Aller simple','flights.roundTrip':'Aller-retour',
+    'flights.from':'De','flights.to':'À',
+    'flights.dep':'Date de départ','flights.ret':'Date de retour',
+    'flights.passengers':'Passagers',
+    'flights.adults':'Adultes','flights.adultsAge':'18 ans et plus',
+    'flights.teens':'Adolescents','flights.teensAge':'12–17 ans',
+    'flights.children':'Enfants','flights.childrenAge':'2–11 ans',
+    'flights.search':'Rechercher des Vols ✈',
+    'seats.title':'Sélectionnez vos Sièges',
+    'seats.available':'Disponible','seats.taken':'Occupé','seats.yourSel':'Votre Sélection',
+    'seats.yourSelTitle':'Votre Sélection','seats.seatsSelected':'sièges sélectionnés',
+    'seats.noSeats':'Aucun siège sélectionné',
+    'summary.title':'Récapitulatif','summary.subtitle':'Vérifiez vos détails avant de procéder au paiement',
+    'summary.routeTitle':'Itinéraire & Dates','summary.passTitle':'Passagers',
+    'summary.flightTitle':'Détails du Vol','summary.extrasTitle':'Services Supplémentaires',
+    'summary.seatsTitle':'Sièges','summary.total':'Montant Total',
+    'summary.contact':'Coordonnées',
+    'summary.email':'Adresse E-mail','summary.phone':'Numéro de Téléphone',
+    'payment.title':'Paiement','payment.subtitle':'Choisissez votre mode de paiement',
+    'payment.totalPay':'Total à payer',
+    'payment.credit':'Carte Bancaire','payment.paypal':'PayPal','payment.digital':'Apple / Google Pay',
+    'payment.fastSecure':'Rapide & sécurisé','payment.oneTap':'Paiement en un clic',
+    'payment.cardHolder':'Titulaire','payment.expires':'Expire',
+    'payment.cardHolderName':'Nom du Titulaire','payment.cardNumber':'Numéro de Carte',
+    'payment.expiry':'Date d\'Expiration','payment.cvv':'CVV',
+    'payment.payNow':'🔒 Payer Maintenant',
+    'payment.ssl':'🔐 Votre paiement est protégé par un chiffrement SSL 256 bits',
+    'confirm.title':'Réservation Confirmée!',
+    'confirm.subtitle':'Votre vol a été réservé avec succès. Bon voyage!',
+    'confirm.print':'🖨 Imprimer la Carte d\'Embarquement','confirm.save':'💾 Enregistrer en PDF',
+    'confirm.backHome':'← Retour à l\'Accueil',
+    'confirm.flightSec':'Vol','confirm.paxSec':'Passagers & Sièges',
+    'confirm.contactSec':'Contact','confirm.totalPaid':'Total Payé',
+    'btn.back':'← Retour','btn.next':'Suivant →',
+    'btn.nextSeats':'Suivant: Sièges →','btn.nextPayment':'Suivant: Paiement →',
+    'footer.rights':'© 2026 VolAir Airlines. Tous droits réservés.',
+    'results.select':'Sélectionner','results.total':'Total:','results.perPerson':'par personne',
+    'extra.luggage':'🧳 Bagage en soute','extra.priority':'⚡ Embarquement prioritaire','extra.drinks':'🍸 Boissons spéciales',
+  }
+};
+
+function getCurrentLang() { return localStorage.getItem('volair_lang') || 'en'; }
+
+function t(key) {
+  const lang = getCurrentLang();
+  return (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || TRANSLATIONS.en[key] || key;
+}
+
+function setLanguage(lang) {
+  localStorage.setItem('volair_lang', lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  applyTranslations();
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+}
+
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.dataset.i18n);
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    el.placeholder = t(el.dataset.i18nPh);
+  });
+}
+
 /* ---------- Storage Helpers ---------- */
 function saveToStorage(key, value) {
   try { localStorage.setItem('volair_' + key, JSON.stringify(value)); } catch (e) {}
@@ -24,6 +204,12 @@ function initNav() {
   document.querySelectorAll('.nav-links a').forEach(a => {
     if (a.getAttribute('href') === path) a.classList.add('active');
   });
+  // Language switcher
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+  });
+  // Apply saved language
+  setLanguage(getCurrentLang());
 }
 
 /* ==============================================
@@ -146,9 +332,9 @@ const SAMPLE_FLIGHTS = [
 ];
 
 const EXTRAS = [
-  { id: 'luggage', label: '🧳 Checked Luggage', price: 25 },
-  { id: 'priority', label: '⚡ Priority Boarding', price: 15 },
-  { id: 'drinks', label: '🍸 Special Drinks', price: 10 },
+  { id: 'luggage', key: 'extra.luggage', price: 25 },
+  { id: 'priority', key: 'extra.priority', price: 15 },
+  { id: 'drinks', key: 'extra.drinks', price: 10 },
 ];
 
 function initResultsPage() {
@@ -185,7 +371,7 @@ function initResultsPage() {
     const extrasHtml = EXTRAS.map(ex => `
       <label class="extra-option">
         <input type="checkbox" class="extra-cb" data-price="${ex.price}" data-extra="${ex.id}" data-flight="${flight.id}">
-        ${ex.label} <span class="extra-price">+€${ex.price}</span>
+        ${t(ex.key)} <span class="extra-price">+€${ex.price}</span>
       </label>
     `).join('');
 
@@ -208,7 +394,7 @@ function initResultsPage() {
         </div>
         <div class="flight-price-box">
           <div class="price">€${flight.price}</div>
-          <div class="price-label">per person</div>
+          <div class="price-label">${t('results.perPerson')}</div>
           <div class="flight-num">${flight.id}</div>
         </div>
       </div>
@@ -216,8 +402,8 @@ function initResultsPage() {
         ${extrasHtml}
       </div>
       <div class="flight-footer">
-        <div class="flight-total">Total: <strong class="total-display">€${flight.price * (search.total || 1)}</strong></div>
-        <button class="btn btn-primary select-btn" data-id="${flight.id}">Select Flight</button>
+        <div class="flight-total">${t('results.total')} <strong class="total-display">€${flight.price * (search.total || 1)}</strong></div>
+        <button class="btn btn-primary select-btn" data-id="${flight.id}">${t('results.select')}</button>
       </div>
     `;
     container.appendChild(card);
@@ -237,7 +423,7 @@ function initResultsPage() {
       const checkedExtras = [];
       card.querySelectorAll('.extra-cb:checked').forEach(cb => {
         const ex = EXTRAS.find(e => e.id === cb.dataset.extra);
-        if (ex) checkedExtras.push(ex);
+        if (ex) checkedExtras.push({ ...ex, label: t(ex.key) });
       });
       const extrasTotal = checkedExtras.reduce((s, e) => s + e.price, 0);
       const baseTotal = flight.price * (search.total || 1);
@@ -357,7 +543,7 @@ function initSeatsPage() {
     if (list) {
       list.innerHTML = selected.length
         ? selected.map(s => `<li><strong>Seat ${s}</strong></li>`).join('')
-        : '<li style="color:var(--mid)">No seats selected</li>';
+        : `<li style="color:var(--mid)">${t('seats.noSeats')}</li>`;
     }
     const nextBtn = document.getElementById('next-btn');
     if (nextBtn) {
@@ -568,7 +754,7 @@ function initConfirmationPage() {
   if (details) {
     details.innerHTML = `
       <div class="summary-section">
-        <h3>Flight</h3>
+        <h3>${t('confirm.flightSec')}</h3>
         ${row('Route', `${search.from || 'TLV'} → ${destinationCity(search.to) || 'Destination'}`)}
         ${row('Flight', flight.id || '—')}
         ${row('Date', search.departure || '—')}
@@ -576,17 +762,17 @@ function initConfirmationPage() {
         ${row('Arrival', flight.arr || '—')}
       </div>
       <div class="summary-section">
-        <h3>Passengers & Seats</h3>
+        <h3>${t('confirm.paxSec')}</h3>
         ${row('Passengers', search.total || 1)}
         ${row('Seats', seats.join(', ') || '—')}
       </div>
       <div class="summary-section">
-        <h3>Contact</h3>
+        <h3>${t('confirm.contactSec')}</h3>
         ${row('Email', contact.email || '—')}
         ${row('Phone', contact.phone || '—')}
       </div>
       <div class="summary-total-row">
-        <span class="label">Total Paid</span>
+        <span class="label">${t('confirm.totalPaid')}</span>
         <span class="value">€${flight.grandTotal || 0}</span>
       </div>
     `;

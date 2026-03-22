@@ -16,12 +16,17 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="crew.html">Our Crew</a></li>
-        <li><a href="fleet.html">Our Fleet</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="flights.html" class="nav-book-btn">Book Now</a></li>
+        <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+        <li><a href="crew.html" data-i18n="nav.crew">Our Crew</a></li>
+        <li><a href="fleet.html" data-i18n="nav.fleet">Our Fleet</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="flights.html" class="nav-book-btn" data-i18n="nav.book">Book Now</a></li>
       </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
     </nav>
   </header>
 
@@ -32,11 +37,11 @@
       <div class="hero-clouds"></div>
 
       <div class="hero-content">
-        <h1 class="hero-tagline">Sky is not the limit.<br>It's your <span class="accent">runway.</span></h1>
-        <p class="hero-slogan">Discover Europe's most beautiful destinations with VolAir Airlines</p>
+        <h1 class="hero-tagline" data-i18n="index.tagline">Sky is not the limit. It's your runway.</h1>
+        <p class="hero-slogan" data-i18n="index.slogan">Discover Europe's most beautiful destinations with VolAir Airlines</p>
         <div class="hero-cta">
-          <a href="flights.html" class="btn btn-primary">Book a Flight</a>
-          <a href="#destinations" class="btn btn-secondary" style="border-color:rgba(255,255,255,0.4);color:#fff;">Explore Destinations</a>
+          <a href="flights.html" class="btn btn-primary" data-i18n="index.bookFlight">Book a Flight</a>
+          <a href="#destinations" class="btn btn-secondary" style="border-color:rgba(255,255,255,0.4);color:#fff;" data-i18n="index.explore">Explore Destinations</a>
         </div>
       </div>
 
@@ -71,8 +76,8 @@
 
     <!-- DESTINATIONS -->
     <section class="destinations" id="destinations">
-      <h2>Popular Destinations</h2>
-      <p class="subtitle">Direct flights from Tel Aviv to Europe's finest cities</p>
+      <h2 data-i18n="index.popular">Popular Destinations</h2>
+      <p class="subtitle" data-i18n="index.subtitle">Direct flights from Tel Aviv to Europe's finest cities</p>
       <div class="dest-grid">
 
         <!-- Barcelona -->
@@ -147,18 +152,18 @@
       <div class="highlights-grid">
         <div class="highlight-item">
           <div class="highlight-icon">✈</div>
-          <h3>Direct Flights</h3>
-          <p>Non-stop routes from Tel Aviv to Europe's top destinations — no layovers, no stress.</p>
+          <h3 data-i18n="index.direct">Direct Flights</h3>
+          <p data-i18n="index.directDesc">Non-stop routes from Tel Aviv to Europe's top destinations — no layovers, no stress.</p>
         </div>
         <div class="highlight-item">
           <div class="highlight-icon">💺</div>
-          <h3>Choose Your Seat</h3>
-          <p>Pick your perfect seat from our interactive seat map before you fly.</p>
+          <h3 data-i18n="index.seat">Choose Your Seat</h3>
+          <p data-i18n="index.seatDesc">Pick your perfect seat from our interactive seat map before you fly.</p>
         </div>
         <div class="highlight-item">
           <div class="highlight-icon">🛡️</div>
-          <h3>Safe &amp; Reliable</h3>
-          <p>Modern Airbus fleet with an impeccable safety record and on-time performance.</p>
+          <h3 data-i18n="index.safe">Safe &amp; Reliable</h3>
+          <p data-i18n="index.safeDesc">Modern Airbus fleet with an impeccable safety record and on-time performance.</p>
         </div>
       </div>
     </section>
@@ -166,8 +171,8 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p><strong>VolAir Airlines</strong> &nbsp;|&nbsp; <a href="about.html">About</a> &nbsp;|&nbsp; <a href="crew.html">Crew</a> &nbsp;|&nbsp; <a href="fleet.html">Fleet</a></p>
-    <p style="margin-top:8px;">© 2026 VolAir Airlines. All rights reserved.</p>
+    <p><strong>VolAir Airlines</strong> &nbsp;|&nbsp; <a href="about.html" data-i18n="nav.about">About</a> &nbsp;|&nbsp; <a href="crew.html" data-i18n="nav.crew">Our Crew</a> &nbsp;|&nbsp; <a href="fleet.html" data-i18n="nav.fleet">Our Fleet</a></p>
+    <p style="margin-top:8px;" data-i18n="footer.rights">© 2026 VolAir Airlines. All rights reserved.</p>
   </footer>
 
   <script src="js/app.js"></script>

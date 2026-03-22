@@ -16,28 +16,33 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="crew.html">Our Crew</a></li>
-        <li><a href="fleet.html">Our Fleet</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="flights.html" class="nav-book-btn">Book Now</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="crew.html" data-i18n="nav.crew">Our Crew</a></li>
+        <li><a href="fleet.html" data-i18n="nav.fleet">Our Fleet</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="flights.html" class="nav-book-btn" data-i18n="nav.book">Book Now</a></li>
       </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
     </nav>
   </header>
 
   <!-- PROGRESS STEPS -->
   <div class="progress-steps">
-    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Search</div></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label" data-i18n="step.search">Search</div></div>
     <div class="step-line done"></div>
-    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Flights</div></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label" data-i18n="step.flights">Flights</div></div>
     <div class="step-line done"></div>
-    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Seats</div></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label" data-i18n="step.seats">Seats</div></div>
     <div class="step-line done"></div>
-    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Summary</div></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label" data-i18n="step.summary">Summary</div></div>
     <div class="step-line done"></div>
-    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Payment</div></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label" data-i18n="step.payment">Payment</div></div>
     <div class="step-line done"></div>
-    <div class="step active"><div class="step-dot">✓</div><div class="step-label">Done</div></div>
+    <div class="step active"><div class="step-dot">✓</div><div class="step-label" data-i18n="step.done">Done</div></div>
   </div>
 
   <main>
@@ -46,8 +51,8 @@
       <!-- Hero confirmation banner -->
       <div class="confirm-hero">
         <div class="confirm-check">✓</div>
-        <h1>Booking Confirmed!</h1>
-        <p>Your flight has been booked successfully. Have a wonderful journey!</p>
+        <h1 data-i18n="confirm.title">Booking Confirmed!</h1>
+        <p data-i18n="confirm.subtitle">Your flight has been booked successfully. Have a wonderful journey!</p>
         <div class="booking-ref" id="booking-ref">VA——</div>
       </div>
 
@@ -60,9 +65,9 @@
 
       <!-- Actions -->
       <div class="confirm-actions">
-        <button id="print-btn" class="btn btn-primary">🖨 Print Boarding Pass</button>
-        <button id="save-btn" class="btn btn-secondary">💾 Save as PDF</button>
-        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+        <button id="print-btn" class="btn btn-primary" data-i18n="confirm.print">🖨 Print Boarding Pass</button>
+        <button id="save-btn" class="btn btn-secondary" data-i18n="confirm.save">💾 Save as PDF</button>
+        <a href="index.html" class="btn btn-outline" data-i18n="confirm.backHome">← Back to Home</a>
       </div>
 
     </div>
@@ -71,7 +76,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <p><strong>VolAir Airlines</strong> &nbsp;|&nbsp; <a href="about.html">About</a> &nbsp;|&nbsp; <a href="crew.html">Crew</a> &nbsp;|&nbsp; <a href="fleet.html">Fleet</a></p>
-    <p style="margin-top:8px;">© 2026 VolAir Airlines. All rights reserved.</p>
+    <p style="margin-top:8px;" data-i18n="footer.rights">© 2026 VolAir Airlines. All rights reserved.</p>
   </footer>
 
   <script src="js/app.js"></script>
