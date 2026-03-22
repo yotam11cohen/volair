@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Seats — VolAir Airlines</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="seats">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a class="nav-logo" href="index.html">Vol<span>Air</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="crew.html">Our Crew</a></li>
+        <li><a href="fleet.html">Our Fleet</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="flights.html" class="nav-book-btn">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PROGRESS STEPS -->
+  <div class="progress-steps">
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Search</div></div>
+    <div class="step-line done"></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Flights</div></div>
+    <div class="step-line done"></div>
+    <div class="step active"><div class="step-dot">3</div><div class="step-label">Seats</div></div>
+    <div class="step-line"></div>
+    <div class="step"><div class="step-dot">4</div><div class="step-label">Summary</div></div>
+    <div class="step-line"></div>
+    <div class="step"><div class="step-dot">5</div><div class="step-label">Payment</div></div>
+    <div class="step-line"></div>
+    <div class="step"><div class="step-dot">6</div><div class="step-label">Done</div></div>
+  </div>
+
+  <main>
+    <div class="seats-wrap">
+      <div class="seats-layout">
+
+        <!-- Seat Map -->
+        <div class="seat-map-card">
+          <h3>Select Your Seats</h3>
+
+          <!-- Legend -->
+          <div class="seat-legend">
+            <div class="legend-item"><div class="legend-dot available"></div> Available</div>
+            <div class="legend-item"><div class="legend-dot taken"></div> Taken</div>
+            <div class="legend-item"><div class="legend-dot selected"></div> Your Selection</div>
+          </div>
+
+          <!-- Plane nose -->
+          <div class="plane-nose">✈</div>
+
+          <!-- Column headers -->
+          <div class="seat-columns-header">
+            <div></div>
+            <div class="col-label">A</div>
+            <div class="col-label">B</div>
+            <div class="col-label">C</div>
+            <div></div>
+            <div class="col-label">D</div>
+            <div class="col-label">E</div>
+            <div class="col-label">F</div>
+          </div>
+
+          <!-- Seat rows — filled by JS -->
+          <div class="seat-rows" id="seat-rows"></div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="seats-sidebar">
+          <div class="seats-info-card">
+            <h3>Your Selection</h3>
+            <div class="seats-counter" id="selected-count">0 / <span id="needed-count">1</span></div>
+            <div class="seats-counter-label">seats selected</div>
+            <ul class="selected-list" id="selected-seats-list">
+              <li style="color:var(--mid)">No seats selected</li>
+            </ul>
+          </div>
+
+          <div class="seats-nav">
+            <button id="back-btn" class="btn btn-outline">← Back</button>
+            <button id="next-btn" class="btn btn-primary" disabled>Next →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p><strong>VolAir Airlines</strong> &nbsp;|&nbsp; <a href="about.html">About</a> &nbsp;|&nbsp; <a href="crew.html">Crew</a> &nbsp;|&nbsp; <a href="fleet.html">Fleet</a></p>
+    <p style="margin-top:8px;">© 2026 VolAir Airlines. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

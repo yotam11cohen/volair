@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Flights — VolAir Airlines</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="flights">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a class="nav-logo" href="index.html">Vol<span>Air</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="crew.html">Our Crew</a></li>
+        <li><a href="fleet.html">Our Fleet</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="flights.html" class="nav-book-btn active">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PROGRESS STEPS -->
+  <div class="progress-steps">
+    <div class="step active">
+      <div class="step-dot">1</div>
+      <div class="step-label">Search</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-dot">2</div>
+      <div class="step-label">Flights</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-dot">3</div>
+      <div class="step-label">Seats</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-dot">4</div>
+      <div class="step-label">Summary</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-dot">5</div>
+      <div class="step-label">Payment</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-dot">6</div>
+      <div class="step-label">Done</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="flights-wrap">
+      <div class="flights-form-card">
+        <div class="flights-form-header">
+          <h2>Search Flights</h2>
+          <p>Find the best fares for your journey</p>
+        </div>
+
+        <div class="flights-form-body">
+          <form id="flights-form" novalidate>
+
+            <!-- Trip type toggle -->
+            <div class="trip-toggle">
+              <button type="button" class="trip-btn active" data-trip="one-way">One-way</button>
+              <button type="button" class="trip-btn" data-trip="round-trip">Round-trip</button>
+            </div>
+
+            <!-- Route -->
+            <div class="route-row">
+              <div class="form-group">
+                <label for="from">From</label>
+                <select id="from">
+                  <option value="TLV" selected>Tel Aviv (TLV)</option>
+                  <option value="BCN">Barcelona (BCN)</option>
+                  <option value="LIS">Lisbon (LIS)</option>
+                  <option value="FCO">Rome (FCO)</option>
+                  <option value="PRG">Prague (PRG)</option>
+                </select>
+              </div>
+              <button type="button" id="swap-btn" class="swap-btn" title="Swap origin and destination">⇄</button>
+              <div class="form-group">
+                <label for="to">To</label>
+                <select id="to">
+                  <option value="">Select destination</option>
+                  <option value="BCN">Barcelona (BCN)</option>
+                  <option value="LIS">Lisbon (LIS)</option>
+                  <option value="FCO">Rome (FCO)</option>
+                  <option value="PRG">Prague (PRG)</option>
+                  <option value="TLV">Tel Aviv (TLV)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Dates -->
+            <div class="form-row" id="dates-row">
+              <div class="form-group">
+                <label for="departure">Departure Date</label>
+                <input type="date" id="departure" required>
+              </div>
+              <div class="form-group" id="return-date-group">
+                <label for="return-date">Return Date</label>
+                <input type="date" id="return-date">
+              </div>
+            </div>
+
+            <!-- Passengers -->
+            <div class="passengers-section">
+              <h3>Passengers</h3>
+
+              <div class="pax-row">
+                <div class="pax-label">
+                  Adults
+                  <small>18 years and above</small>
+                </div>
+                <div class="pax-counter">
+                  <button type="button" class="pax-btn" data-target="adults" data-dir="down">−</button>
+                  <span class="pax-count" id="adults-count">1</span>
+                  <button type="button" class="pax-btn" data-target="adults" data-dir="up">+</button>
+                  <input type="hidden" id="adults" value="1">
+                </div>
+              </div>
+
+              <div class="pax-row">
+                <div class="pax-label">
+                  Teens
+                  <small>12–17 years</small>
+                </div>
+                <div class="pax-counter">
+                  <button type="button" class="pax-btn" data-target="teens" data-dir="down">−</button>
+                  <span class="pax-count" id="teens-count">0</span>
+                  <button type="button" class="pax-btn" data-target="teens" data-dir="up">+</button>
+                  <input type="hidden" id="teens" value="0">
+                </div>
+              </div>
+
+              <div class="pax-row">
+                <div class="pax-label">
+                  Children
+                  <small>2–11 years</small>
+                </div>
+                <div class="pax-counter">
+                  <button type="button" class="pax-btn" data-target="children" data-dir="down">−</button>
+                  <span class="pax-count" id="children-count">0</span>
+                  <button type="button" class="pax-btn" data-target="children" data-dir="up">+</button>
+                  <input type="hidden" id="children" value="0">
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:28px;">
+              <button type="submit" class="btn btn-primary" style="width:100%; padding:14px; font-size:1rem;">
+                Search Flights ✈
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p><strong>VolAir Airlines</strong> &nbsp;|&nbsp; <a href="about.html">About</a> &nbsp;|&nbsp; <a href="crew.html">Crew</a> &nbsp;|&nbsp; <a href="fleet.html">Fleet</a></p>
+    <p style="margin-top:8px;">© 2026 VolAir Airlines. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

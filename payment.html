@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment — VolAir Airlines</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="payment">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a class="nav-logo" href="index.html">Vol<span>Air</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="crew.html">Our Crew</a></li>
+        <li><a href="fleet.html">Our Fleet</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="flights.html" class="nav-book-btn">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PROGRESS STEPS -->
+  <div class="progress-steps">
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Search</div></div>
+    <div class="step-line done"></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Flights</div></div>
+    <div class="step-line done"></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Seats</div></div>
+    <div class="step-line done"></div>
+    <div class="step done"><div class="step-dot">✓</div><div class="step-label">Summary</div></div>
+    <div class="step-line done"></div>
+    <div class="step active"><div class="step-dot">5</div><div class="step-label">Payment</div></div>
+    <div class="step-line"></div>
+    <div class="step"><div class="step-dot">6</div><div class="step-label">Done</div></div>
+  </div>
+
+  <main>
+    <div class="payment-wrap">
+
+      <div class="page-banner" style="border-radius:var(--radius); margin-bottom:24px;">
+        <h1>Payment</h1>
+        <p>Choose your preferred payment method</p>
+      </div>
+
+      <!-- Order total -->
+      <div class="order-total-bar">
+        <span>Total to pay</span>
+        <span class="amount" id="order-total">€0</span>
+      </div>
+
+      <!-- Payment method selection -->
+      <div class="payment-methods">
+        <div class="payment-method-card" data-method="credit">
+          <div class="payment-method-icon">💳</div>
+          <div class="payment-method-name">Credit Card</div>
+          <div class="payment-method-sub">Visa, Mastercard, Amex</div>
+        </div>
+        <div class="payment-method-card" data-method="paypal">
+          <div class="payment-method-icon">🅿️</div>
+          <div class="payment-method-name">PayPal</div>
+          <div class="payment-method-sub">Fast &amp; secure</div>
+        </div>
+        <div class="payment-method-card" data-method="digital">
+          <div class="payment-method-icon">📱</div>
+          <div class="payment-method-name">Apple / Google Pay</div>
+          <div class="payment-method-sub">One-tap payment</div>
+        </div>
+      </div>
+
+      <!-- Credit card form -->
+      <div class="card-form" id="card-form">
+        <!-- Visual card -->
+        <div class="card-visual">
+          <div class="card-chip"></div>
+          <div class="card-number-display" id="card-number-display">···· ···· ···· ····</div>
+          <div class="card-details-row">
+            <div>
+              <div>Card Holder</div>
+              <div class="val" id="card-name-display">YOUR NAME</div>
+            </div>
+            <div style="text-align:right;">
+              <div>Expires</div>
+              <div class="val" id="card-expiry-display">MM/YY</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-fields">
+          <div class="form-group full">
+            <label for="card-name">Cardholder Name</label>
+            <input type="text" id="card-name" placeholder="Name as on card" autocomplete="cc-name">
+          </div>
+          <div class="form-group full">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number">
+          </div>
+          <div class="form-group">
+            <label for="card-expiry">Expiry Date</label>
+            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp">
+          </div>
+          <div class="form-group">
+            <label for="card-cvv">CVV</label>
+            <input type="text" id="card-cvv" placeholder="123" maxlength="4" autocomplete="cc-csc">
+          </div>
+        </div>
+      </div>
+
+      <!-- PayPal form -->
+      <div class="paypal-form" id="paypal-form">
+        <div style="font-size:4rem; margin-bottom:12px;">🅿️</div>
+        <h3 style="margin-bottom:8px;">Pay with PayPal</h3>
+        <p>You'll be redirected to PayPal to complete your payment securely.</p>
+        <div style="background:var(--grey); border-radius:var(--radius-sm); padding:14px; font-size:0.88rem; color:var(--mid);">
+          Clicking "Pay Now" will simulate a PayPal redirect.
+        </div>
+      </div>
+
+      <!-- Apple / Google Pay form -->
+      <div class="digital-pay-form" id="digital-pay-form">
+        <div style="font-size:4rem; margin-bottom:12px;">📱</div>
+        <h3 style="margin-bottom:8px;">Apple Pay / Google Pay</h3>
+        <p>Use your device's biometric authentication to pay instantly.</p>
+        <div style="background:var(--grey); border-radius:var(--radius-sm); padding:14px; font-size:0.88rem; color:var(--mid);">
+          Tap "Pay Now" to simulate a digital wallet payment.
+        </div>
+      </div>
+
+      <!-- Pay button -->
+      <div class="pay-btn-wrap">
+        <button id="pay-btn" class="btn btn-lime" style="width:100%; padding:16px; font-size:1.05rem;" disabled>
+          🔒 Pay Now
+        </button>
+      </div>
+
+      <p style="text-align:center; font-size:0.8rem; color:var(--mid); margin-top:14px;">
+        🔐 Your payment is protected by 256-bit SSL encryption
+      </p>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p><strong>VolAir Airlines</strong> &nbsp;|&nbsp; <a href="about.html">About</a> &nbsp;|&nbsp; <a href="crew.html">Crew</a> &nbsp;|&nbsp; <a href="fleet.html">Fleet</a></p>
+    <p style="margin-top:8px;">© 2026 VolAir Airlines. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

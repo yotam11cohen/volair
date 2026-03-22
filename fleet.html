@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Fleet — VolAir Airlines</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="fleet">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a class="nav-logo" href="index.html">Vol<span>Air</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="crew.html">Our Crew</a></li>
+        <li><a href="fleet.html" class="active">Our Fleet</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="flights.html" class="nav-book-btn">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <h1>Our Fleet</h1>
+    <p>Modern, efficient, and comfortable — aircraft built for your journey</p>
+  </div>
+
+  <main>
+    <div class="fleet-wrap">
+
+      <!-- A321 -->
+      <div class="fleet-aircraft">
+        <div class="fleet-aircraft-grid">
+          <div class="fleet-img-wrap">
+            <img
+              src="images/a321.jpg"
+              alt="Airbus A321 VolAir Airlines"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="img-placeholder" style="display:none; background: linear-gradient(135deg, var(--dark), var(--dark-2));">
+              <span>✈</span>
+              <p>Airbus A321</p>
+            </div>
+          </div>
+          <div class="fleet-info">
+            <div class="fleet-model-tag">Airbus A321</div>
+            <h2>A321 — The Workhorse</h2>
+            <p>
+              The Airbus A321 is the backbone of the VolAir fleet. With its stretched fuselage and
+              advanced CFM LEAP-1A engines, it delivers exceptional range and efficiency on our
+              medium-haul European routes.
+            </p>
+            <p>
+              Passengers enjoy a wide, airy cabin with overhead storage, mood lighting, and our
+              signature VolAir in-seat entertainment system on every seat.
+            </p>
+            <div class="fleet-specs">
+              <div class="spec-item">
+                <div class="spec-val">180</div>
+                <div class="spec-label">Seats</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-val">7,400 km</div>
+                <div class="spec-label">Range</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-val">840 km/h</div>
+                <div class="spec-label">Cruise Speed</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-val">12,100 m</div>
+                <div class="spec-label">Cruising Altitude</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fleet-divider"></div>
+
+      <!-- A320neo -->
+      <div class="fleet-aircraft">
+        <div class="fleet-aircraft-grid reverse">
+          <div class="fleet-img-wrap">
+            <img
+              src="images/a320neo.jpg"
+              alt="Airbus A320neo VolAir Airlines"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="img-placeholder" style="display:none; background: linear-gradient(135deg, var(--turquoise-dark), var(--sky-dark));">
+              <span>✈</span>
+              <p>Airbus A320neo</p>
+            </div>
+          </div>
+          <div class="fleet-info">
+            <div class="fleet-model-tag">Airbus A320neo</div>
+            <h2>A320neo — The Eco Star</h2>
+            <p>
+              The A320neo (New Engine Option) represents the future of sustainable aviation. With
+              20% lower fuel consumption and dramatically reduced noise emissions, it is our greenest
+              aircraft — perfect for short-to-medium haul routes.
+            </p>
+            <p>
+              Its sharklet wingtip devices and LEAP-1A engines make every flight kinder to the
+              planet, without compromising a single degree of passenger comfort.
+            </p>
+            <div class="fleet-specs">
+              <div class="spec-item">
+                <div class="spec-val">165</div>
+                <div class="spec-label">Seats</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-val">6,300 km</div>
+                <div class="spec-label">Range</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-val">833 km/h</div>
+                <div class="spec-label">Cruise Speed</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-val">20%</div>
+                <div class="spec-label">Fuel Savings vs prev. gen</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fleet commitment -->
+      <div style="background: linear-gradient(135deg, var(--dark), var(--dark-2)); border-radius: var(--radius); padding: 40px; color: var(--white); text-align: center;">
+        <div style="font-size:2.5rem; margin-bottom:12px;">🌱</div>
+        <h2 style="margin-bottom:12px;">Our Commitment to Sustainable Aviation</h2>
+        <p style="color:rgba(255,255,255,0.75); max-width:600px; margin:0 auto; line-height:1.9;">
+          VolAir Airlines is committed to reducing its carbon footprint year on year. By operating
+          the latest-generation Airbus aircraft, investing in Sustainable Aviation Fuel (SAF), and
+          optimising our flight paths, we aim to achieve net-zero emissions by 2040.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p><strong>VolAir Airlines</strong> &nbsp;|&nbsp; <a href="about.html">About</a> &nbsp;|&nbsp; <a href="crew.html">Crew</a> &nbsp;|&nbsp; <a href="fleet.html">Fleet</a></p>
+    <p style="margin-top:8px;">© 2026 VolAir Airlines. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
